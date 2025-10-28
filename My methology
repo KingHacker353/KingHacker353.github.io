@@ -48,7 +48,17 @@ cat urls.txt | gf sqli > sqli_urls.txt
 # SQLmap se test karo
 sqlmap -m sqli_urls.txt --batch --level 3 --risk 2
 ```
+# XSS parameters
+cat urls.txt | grep -E "(redirect=|url=|return=|next=|r=)" > redirect_urls.txt
 
+# SSRF parameters
+cat urls.txt | grep -E "(url=|target=|destination=|proxy=|request=)" > ssrf_urls.txt
+
+# RCE parameters
+cat urls.txt | grep -E "(cmd=|command=|exec=|execute=|shell=)" > rce_urls.txt
+
+# SQLi parameters
+cat urls.txt | grep -E "(id=|user=|username=|pass=|search=|query=)" > sqli_urls.txt
 B. XSS Test
 
 ```bash
