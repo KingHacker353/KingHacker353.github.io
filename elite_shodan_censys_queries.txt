@@ -1,0 +1,663 @@
+# 🌐 ELITE SHODAN, CENSYS & FOFA QUERIES COLLECTION
+# Red Team OSINT - IoT & Infrastructure Discovery
+# Replace "target.com" with your actual target domain
+
+# ========================================
+# 🔍 SHODAN ELITE QUERIES
+# ========================================
+
+# Basic Target Discovery
+org:"Target Company"
+hostname:"target.com"
+ssl:"target.com"
+ssl.cert.subject.cn:"target.com"
+ssl.cert.subject.cn:"*.target.com"
+http.title:"Target Company"
+http.html:"target.com"
+
+# Subdomain Discovery
+hostname:"*.target.com"
+ssl:"*.target.com"
+ssl.cert.extensions.subject_alt_name:"target.com"
+
+# IP Range Discovery (replace with actual ASN)
+asn:AS15169
+net:192.168.1.0/24
+org:"Target Company" country:US
+org:"Target Company" city:"New York"
+
+# ========================================
+# 🗄️ DATABASE EXPOSURE QUERIES
+# ========================================
+
+# MongoDB
+"MongoDB Server Information" port:27017
+"MongoDB Server Information" hostname:"target.com"
+"MongoDB Server Information" org:"Target Company"
+product:"MongoDB" hostname:"target.com"
+"mongodb" port:27017 hostname:"target.com"
+"db_version" mongodb hostname:"target.com"
+
+# MySQL
+"mysql" port:3306 hostname:"target.com"
+"MySQL" hostname:"target.com"
+product:"MySQL" hostname:"target.com"
+"5.7.0" mysql hostname:"target.com"
+"8.0.0" mysql hostname:"target.com"
+
+# PostgreSQL
+"PostgreSQL" port:5432 hostname:"target.com"
+product:"PostgreSQL" hostname:"target.com"
+"postgres" hostname:"target.com"
+
+# Redis
+"redis" port:6379 hostname:"target.com"
+product:"Redis" hostname:"target.com"
+"redis_version" hostname:"target.com"
+
+# Elasticsearch
+"elasticsearch" port:9200 hostname:"target.com"
+product:"Elasticsearch" hostname:"target.com"
+"cluster_name" elasticsearch hostname:"target.com"
+
+# CouchDB
+"couchdb" port:5984 hostname:"target.com"
+product:"CouchDB" hostname:"target.com"
+
+# Cassandra
+"cassandra" port:9042 hostname:"target.com"
+product:"Cassandra" hostname:"target.com"
+
+# InfluxDB
+"influxdb" port:8086 hostname:"target.com"
+product:"InfluxDB" hostname:"target.com"
+
+# ========================================
+# 🌐 WEB SERVERS & APPLICATIONS
+# ========================================
+
+# Apache
+"Apache" hostname:"target.com"
+"Apache" port:80,443,8080,8443 hostname:"target.com"
+product:"Apache httpd" hostname:"target.com"
+"Server: Apache" hostname:"target.com"
+
+# Nginx
+"nginx" hostname:"target.com"
+product:"nginx" hostname:"target.com"
+"Server: nginx" hostname:"target.com"
+
+# IIS
+"IIS" hostname:"target.com"
+"Microsoft-IIS" hostname:"target.com"
+product:"Microsoft IIS httpd" hostname:"target.com"
+
+# Tomcat
+"Apache Tomcat" hostname:"target.com"
+product:"Apache Tomcat" hostname:"target.com"
+"tomcat" port:8080 hostname:"target.com"
+
+# JBoss
+"JBoss" hostname:"target.com"
+product:"JBoss" hostname:"target.com"
+
+# WebLogic
+"WebLogic" hostname:"target.com"
+product:"Oracle WebLogic" hostname:"target.com"
+
+# Node.js
+"Express" hostname:"target.com"
+"Node.js" hostname:"target.com"
+product:"Node.js" hostname:"target.com"
+
+# ========================================
+# 🔐 AUTHENTICATION & ADMIN PANELS
+# ========================================
+
+# General Admin Panels
+"admin" "login" hostname:"target.com"
+"administrator" hostname:"target.com"
+"dashboard" hostname:"target.com"
+http.title:"Admin" hostname:"target.com"
+http.title:"Login" hostname:"target.com"
+http.title:"Dashboard" hostname:"target.com"
+
+# phpMyAdmin
+"phpmyadmin" hostname:"target.com"
+"phpMyAdmin" hostname:"target.com"
+http.title:"phpMyAdmin" hostname:"target.com"
+
+# Grafana
+"grafana" hostname:"target.com"
+product:"Grafana" hostname:"target.com"
+http.title:"Grafana" hostname:"target.com"
+
+# Jenkins
+"jenkins" hostname:"target.com"
+product:"Jenkins" hostname:"target.com"
+http.title:"Jenkins" hostname:"target.com"
+
+# GitLab
+"gitlab" hostname:"target.com"
+http.title:"GitLab" hostname:"target.com"
+
+# Jira
+"jira" hostname:"target.com"
+http.title:"JIRA" hostname:"target.com"
+
+# Confluence
+"confluence" hostname:"target.com"
+http.title:"Confluence" hostname:"target.com"
+
+# Kibana
+"kibana" hostname:"target.com"
+product:"Kibana" hostname:"target.com"
+http.title:"Kibana" hostname:"target.com"
+
+# Splunk
+"splunk" hostname:"target.com"
+product:"Splunk" hostname:"target.com"
+http.title:"Splunk" hostname:"target.com"
+
+# ========================================
+# 🔌 REMOTE ACCESS & VPN
+# ========================================
+
+# RDP (Remote Desktop)
+port:3389 hostname:"target.com"
+"rdp" hostname:"target.com"
+product:"Microsoft Terminal Services" hostname:"target.com"
+
+# VNC
+port:5900 hostname:"target.com"
+"vnc" hostname:"target.com"
+product:"VNC" hostname:"target.com"
+
+# SSH
+port:22 hostname:"target.com"
+"ssh" hostname:"target.com"
+product:"OpenSSH" hostname:"target.com"
+
+# Telnet
+port:23 hostname:"target.com"
+"telnet" hostname:"target.com"
+
+# OpenVPN
+"openvpn" hostname:"target.com"
+product:"OpenVPN" hostname:"target.com"
+
+# Citrix
+"citrix" hostname:"target.com"
+product:"Citrix" hostname:"target.com"
+
+# TeamViewer
+"teamviewer" hostname:"target.com"
+product:"TeamViewer" hostname:"target.com"
+
+# ========================================
+# 📧 EMAIL & COMMUNICATION
+# ========================================
+
+# Exchange
+"Microsoft Exchange" hostname:"target.com"
+product:"Microsoft Exchange" hostname:"target.com"
+"outlook" hostname:"target.com"
+
+# Postfix
+"postfix" hostname:"target.com"
+product:"Postfix" hostname:"target.com"
+
+# Sendmail
+"sendmail" hostname:"target.com"
+product:"Sendmail" hostname:"target.com"
+
+# Zimbra
+"zimbra" hostname:"target.com"
+product:"Zimbra" hostname:"target.com"
+
+# Roundcube
+"roundcube" hostname:"target.com"
+http.title:"Roundcube" hostname:"target.com"
+
+# ========================================
+# 🏭 INDUSTRIAL CONTROL SYSTEMS (ICS/SCADA)
+# ========================================
+
+# Schneider Electric
+"Schneider Electric" hostname:"target.com"
+product:"Schneider Electric" hostname:"target.com"
+
+# Siemens
+"Siemens" hostname:"target.com"
+product:"Siemens" hostname:"target.com"
+"SIMATIC" hostname:"target.com"
+
+# Allen Bradley
+"Allen Bradley" hostname:"target.com"
+"Rockwell" hostname:"target.com"
+
+# GE
+"General Electric" hostname:"target.com"
+"GE Fanuc" hostname:"target.com"
+
+# Modbus
+port:502 hostname:"target.com"
+"modbus" hostname:"target.com"
+
+# DNP3
+port:20000 hostname:"target.com"
+"dnp3" hostname:"target.com"
+
+# BACnet
+port:47808 hostname:"target.com"
+"bacnet" hostname:"target.com"
+
+# ========================================
+# 🎥 SURVEILLANCE & CAMERAS
+# ========================================
+
+# IP Cameras
+"IP Camera" hostname:"target.com"
+"webcam" hostname:"target.com"
+"camera" hostname:"target.com"
+product:"IP Camera" hostname:"target.com"
+
+# Axis
+"axis" hostname:"target.com"
+product:"Axis" hostname:"target.com"
+
+# Hikvision
+"hikvision" hostname:"target.com"
+product:"Hikvision" hostname:"target.com"
+
+# Dahua
+"dahua" hostname:"target.com"
+product:"Dahua" hostname:"target.com"
+
+# RTSP Streams
+port:554 hostname:"target.com"
+"rtsp" hostname:"target.com"
+
+# ========================================
+# 🖨️ PRINTERS & OFFICE EQUIPMENT
+# ========================================
+
+# HP Printers
+"HP" "printer" hostname:"target.com"
+product:"HP" hostname:"target.com"
+
+# Canon
+"Canon" hostname:"target.com"
+product:"Canon" hostname:"target.com"
+
+# Xerox
+"Xerox" hostname:"target.com"
+product:"Xerox" hostname:"target.com"
+
+# Brother
+"Brother" hostname:"target.com"
+product:"Brother" hostname:"target.com"
+
+# Generic Printers
+"printer" hostname:"target.com"
+port:631 hostname:"target.com"
+port:9100 hostname:"target.com"
+
+# ========================================
+# 🌩️ CLOUD & CONTAINERIZATION
+# ========================================
+
+# Docker
+"docker" hostname:"target.com"
+product:"Docker" hostname:"target.com"
+port:2375,2376 hostname:"target.com"
+
+# Kubernetes
+"kubernetes" hostname:"target.com"
+"k8s" hostname:"target.com"
+port:6443,8080,10250 hostname:"target.com"
+
+# AWS
+"aws" hostname:"target.com"
+"amazon" hostname:"target.com"
+"amazonaws" hostname:"target.com"
+
+# Google Cloud
+"gcp" hostname:"target.com"
+"google cloud" hostname:"target.com"
+"googleapis" hostname:"target.com"
+
+# Azure
+"azure" hostname:"target.com"
+"azurewebsites" hostname:"target.com"
+
+# ========================================
+# 🔧 NETWORK INFRASTRUCTURE
+# ========================================
+
+# Routers
+"router" hostname:"target.com"
+product:"router" hostname:"target.com"
+
+# Switches
+"switch" hostname:"target.com"
+product:"switch" hostname:"target.com"
+
+# Firewalls
+"firewall" hostname:"target.com"
+product:"firewall" hostname:"target.com"
+
+# Load Balancers
+"load balancer" hostname:"target.com"
+product:"load balancer" hostname:"target.com"
+
+# SNMP
+port:161 hostname:"target.com"
+"snmp" hostname:"target.com"
+
+# ========================================
+# 📊 MONITORING & ANALYTICS
+# ========================================
+
+# Nagios
+"nagios" hostname:"target.com"
+product:"Nagios" hostname:"target.com"
+
+# Zabbix
+"zabbix" hostname:"target.com"
+product:"Zabbix" hostname:"target.com"
+
+# Cacti
+"cacti" hostname:"target.com"
+product:"Cacti" hostname:"target.com"
+
+# PRTG
+"prtg" hostname:"target.com"
+product:"PRTG" hostname:"target.com"
+
+# ========================================
+# 🎮 GAMING & ENTERTAINMENT
+# ========================================
+
+# Minecraft
+"minecraft" hostname:"target.com"
+port:25565 hostname:"target.com"
+
+# Steam
+"steam" hostname:"target.com"
+port:27015 hostname:"target.com"
+
+# TeamSpeak
+"teamspeak" hostname:"target.com"
+port:9987 hostname:"target.com"
+
+# ========================================
+# 💾 FILE SHARING & STORAGE
+# ========================================
+
+# FTP
+port:21 hostname:"target.com"
+"ftp" hostname:"target.com"
+product:"FTP" hostname:"target.com"
+
+# SFTP
+port:22 hostname:"target.com"
+"sftp" hostname:"target.com"
+
+# SMB/CIFS
+port:445 hostname:"target.com"
+"smb" hostname:"target.com"
+
+# NFS
+port:2049 hostname:"target.com"
+"nfs" hostname:"target.com"
+
+# ========================================
+# 🔍 CENSYS ELITE QUERIES
+# ========================================
+
+# Certificate-based Discovery
+parsed.names: target.com
+parsed.subject.common_name: target.com
+parsed.subject.common_name: *.target.com
+parsed.extensions.subject_alt_name.dns_names: target.com
+parsed.issuer.organization: "Target Company"
+
+# Service Discovery
+services.service_name: HTTP and parsed.names: target.com
+services.service_name: HTTPS and parsed.names: target.com
+services.port: 22 and parsed.names: target.com
+services.port: 3389 and parsed.names: target.com
+services.port: 21 and parsed.names: target.com
+
+# Banner-based Discovery
+services.banner: "Apache" and parsed.names: target.com
+services.banner: "nginx" and parsed.names: target.com
+services.banner: "Microsoft-IIS" and parsed.names: target.com
+
+# Location-based Discovery
+location.country: "United States" and parsed.names: target.com
+location.city: "New York" and parsed.names: target.com
+
+# ASN-based Discovery
+autonomous_system.asn: 15169 and parsed.names: target.com
+autonomous_system.organization: "Target Company"
+
+# Protocol-specific
+protocols: "443/https" and parsed.names: target.com
+protocols: "80/http" and parsed.names: target.com
+protocols: "22/ssh" and parsed.names: target.com
+
+# ========================================
+# 🔍 ZOOMEYE ELITE QUERIES
+# ========================================
+
+# Basic Discovery
+site:target.com
+ssl:target.com
+hostname:target.com
+org:"Target Company"
+
+# Service Discovery
+app:"Apache httpd" +site:target.com
+app:"nginx" +site:target.com
+app:"Microsoft IIS" +site:target.com
+app:"OpenSSH" +site:target.com
+
+# Port-based Discovery
+port:"80" +site:target.com
+port:"443" +site:target.com
+port:"22" +site:target.com
+port:"3389" +site:target.com
+
+# OS Discovery
+os:"Windows" +site:target.com
+os:"Linux" +site:target.com
+os:"Ubuntu" +site:target.com
+
+# Device Discovery
+device:"router" +site:target.com
+device:"camera" +site:target.com
+device:"printer" +site:target.com
+
+# ========================================
+# 🔍 FOFA ELITE QUERIES (Chinese Infrastructure)
+# ========================================
+
+# Basic Discovery
+domain="target.com"
+cert="target.com"
+title="target"
+body="target.com"
+header="target.com"
+
+# Service Discovery
+app="Apache" && domain="target.com"
+app="nginx" && domain="target.com"
+app="Microsoft-IIS" && domain="target.com"
+app="OpenSSH" && domain="target.com"
+
+# Port Discovery
+port="80" && domain="target.com"
+port="443" && domain="target.com"
+port="22" && domain="target.com"
+port="3389" && domain="target.com"
+
+# Protocol Discovery
+protocol="http" && domain="target.com"
+protocol="https" && domain="target.com"
+protocol="ssh" && domain="target.com"
+protocol="ftp" && domain="target.com"
+
+# Country-specific
+country="CN" && domain="target.com"
+country="US" && domain="target.com"
+region="Beijing" && domain="target.com"
+
+# Organization Discovery
+org="Target Company"
+asn="15169" && domain="target.com"
+
+# Banner Discovery
+banner="Apache" && domain="target.com"
+banner="nginx" && domain="target.com"
+banner="Microsoft-IIS" && domain="target.com"
+
+# ========================================
+# 🎯 ADVANCED COMBINATION QUERIES
+# ========================================
+
+# Shodan Advanced Combinations
+(hostname:"target.com" OR hostname:"*.target.com") AND (port:80 OR port:443 OR port:8080)
+ssl:"target.com" AND (product:"Apache" OR product:"nginx" OR product:"Microsoft IIS")
+org:"Target Company" AND (port:22 OR port:3389 OR port:21)
+hostname:"target.com" AND ("admin" OR "login" OR "dashboard")
+
+# Censys Advanced Combinations
+(parsed.names: target.com OR parsed.names: *.target.com) AND services.port: (80 OR 443)
+parsed.subject.common_name: target.com AND services.service_name: (HTTP OR HTTPS)
+autonomous_system.organization: "Target Company" AND protocols: ("22/ssh" OR "3389/rdp")
+
+# FOFA Advanced Combinations
+(domain="target.com" OR cert="target.com") && (port="80" OR port="443")
+app="Apache" && domain="target.com" && country="US"
+title="login" && domain="target.com"
+body="admin" && domain="target.com"
+
+# ========================================
+# 🚨 VULNERABILITY-SPECIFIC QUERIES
+# ========================================
+
+# Default Credentials
+"default password" hostname:"target.com"
+"admin:admin" hostname:"target.com"
+"root:root" hostname:"target.com"
+"admin:password" hostname:"target.com"
+
+# Exposed Services
+"anonymous" ftp hostname:"target.com"
+"public" hostname:"target.com"
+"guest" hostname:"target.com"
+
+# Weak Configurations
+"ssl" "weak" hostname:"target.com"
+"cipher" "weak" hostname:"target.com"
+"certificate" "expired" hostname:"target.com"
+
+# ========================================
+# 📱 MOBILE & IoT SPECIFIC
+# ========================================
+
+# Mobile Device Management
+"mdm" hostname:"target.com"
+"mobile device" hostname:"target.com"
+"airwatch" hostname:"target.com"
+
+# IoT Devices
+"iot" hostname:"target.com"
+"internet of things" hostname:"target.com"
+"smart" hostname:"target.com"
+
+# Home Automation
+"home automation" hostname:"target.com"
+"smart home" hostname:"target.com"
+"alexa" hostname:"target.com"
+
+# ========================================
+# 🏥 HEALTHCARE & MEDICAL DEVICES
+# ========================================
+
+# Medical Equipment
+"medical" hostname:"target.com"
+"patient" hostname:"target.com"
+"hospital" hostname:"target.com"
+"healthcare" hostname:"target.com"
+
+# DICOM
+port:104 hostname:"target.com"
+"dicom" hostname:"target.com"
+
+# HL7
+"hl7" hostname:"target.com"
+"health level 7" hostname:"target.com"
+
+# ========================================
+# 🎓 EDUCATION SPECIFIC
+# ========================================
+
+# Learning Management Systems
+"moodle" hostname:"target.com"
+"blackboard" hostname:"target.com"
+"canvas" hostname:"target.com"
+"schoology" hostname:"target.com"
+
+# Student Information Systems
+"student" hostname:"target.com"
+"grade" hostname:"target.com"
+"academic" hostname:"target.com"
+
+# ========================================
+# 💰 FINANCIAL & PAYMENT SYSTEMS
+# ========================================
+
+# Payment Processing
+"payment" hostname:"target.com"
+"paypal" hostname:"target.com"
+"stripe" hostname:"target.com"
+"square" hostname:"target.com"
+
+# Banking
+"bank" hostname:"target.com"
+"atm" hostname:"target.com"
+"pos" hostname:"target.com"
+
+# ========================================
+# 🔧 AUTOMATION SCRIPTS INTEGRATION
+# ========================================
+
+# Use these queries with automation tools:
+# shodan search 'hostname:"target.com"' --fields ip_str,port,org,hostnames
+# censys search 'parsed.names: target.com' --index-type ipv4
+# python fofa_search.py 'domain="target.com"'
+
+# ========================================
+# 🚨 IMPORTANT USAGE NOTES
+# ========================================
+
+# 1. Replace "target.com" with actual target domain
+# 2. Replace "Target Company" with actual organization name
+# 3. Use API keys for better results and higher limits
+# 4. Combine multiple search engines for comprehensive coverage
+# 5. Use VPN to avoid IP-based restrictions
+# 6. Respect rate limits and terms of service
+# 7. Document all findings properly
+# 8. Verify results before reporting
+# 9. Use responsible disclosure practices
+# 10. Only use on authorized targets
+
+# API Usage Examples:
+# shodan search 'hostname:"target.com"' --limit 1000
+# shodan host 1.2.3.4
+# shodan count 'hostname:"target.com"'
+
+# Happy Hunting! 🎯🔥

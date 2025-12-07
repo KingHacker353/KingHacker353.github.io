@@ -1,0 +1,599 @@
+# 🔥 ELITE GOOGLE DORKS COLLECTION - RED TEAM STYLE 🔥
+# Replace "target.com" with your actual target domain
+# Use these responsibly and only on authorized targets!
+
+# ========================================
+# 🎯 SENSITIVE FILE EXPOSURE DORKS
+# ========================================
+
+# Configuration Files & Backups
+site:target.com filetype:env
+site:target.com filetype:config
+site:target.com filetype:conf
+site:target.com filetype:cnf
+site:target.com filetype:cfg
+site:target.com filetype:ini
+site:target.com filetype:inf
+site:target.com filetype:reg
+site:target.com filetype:bak
+site:target.com filetype:backup
+site:target.com filetype:old
+site:target.com filetype:orig
+site:target.com filetype:tmp
+site:target.com filetype:temp
+
+# Database Files
+site:target.com filetype:sql
+site:target.com filetype:db
+site:target.com filetype:dbf
+site:target.com filetype:mdb
+site:target.com filetype:sqlite
+site:target.com filetype:sqlite3
+
+# Log Files
+site:target.com filetype:log
+site:target.com filetype:logs
+site:target.com "access.log"
+site:target.com "error.log"
+site:target.com "debug.log"
+site:target.com "application.log"
+
+# Document Files
+site:target.com filetype:pdf
+site:target.com filetype:doc
+site:target.com filetype:docx
+site:target.com filetype:xls
+site:target.com filetype:xlsx
+site:target.com filetype:ppt
+site:target.com filetype:pptx
+site:target.com filetype:rtf
+site:target.com filetype:csv
+site:target.com filetype:txt
+
+# ========================================
+# 🔐 AUTHENTICATION & LOGIN DORKS
+# ========================================
+
+# Admin Panels
+site:target.com inurl:admin
+site:target.com inurl:administrator
+site:target.com inurl:adminpanel
+site:target.com inurl:admin_area
+site:target.com inurl:admin-panel
+site:target.com inurl:controlpanel
+site:target.com inurl:admincp
+site:target.com inurl:admincontrol
+site:target.com inurl:admin_login
+site:target.com inurl:panel-administracion
+site:target.com inurl:instadmin
+site:target.com inurl:memberadmin
+site:target.com inurl:administratorlogin
+site:target.com inurl:adm
+site:target.com inurl:cp
+site:target.com inurl:wp-admin
+site:target.com inurl:administrator
+site:target.com inurl:admin.php
+site:target.com inurl:admin.html
+site:target.com inurl:admin.asp
+site:target.com inurl:admin.aspx
+site:target.com inurl:admin.jsp
+
+# Login Pages
+site:target.com inurl:login
+site:target.com inurl:signin
+site:target.com inurl:sign-in
+site:target.com inurl:log-in
+site:target.com inurl:logon
+site:target.com inurl:sign_in
+site:target.com inurl:account
+site:target.com inurl:member
+site:target.com inurl:members
+site:target.com inurl:user
+site:target.com inurl:users
+site:target.com inurl:auth
+site:target.com inurl:authentication
+site:target.com inurl:sso
+
+# Dashboard & Management
+site:target.com inurl:dashboard
+site:target.com inurl:cpanel
+site:target.com inurl:cPanel
+site:target.com inurl:plesk
+site:target.com inurl:webmin
+site:target.com inurl:phpmyadmin
+site:target.com inurl:phpMyAdmin
+site:target.com inurl:mysql
+site:target.com inurl:wp-login
+site:target.com inurl:wp-admin
+site:target.com inurl:joomla
+site:target.com inurl:drupal
+
+# ========================================
+# 🌐 DEVELOPMENT & TESTING ENVIRONMENTS
+# ========================================
+
+# Development Environments
+site:target.com inurl:dev
+site:target.com inurl:development
+site:target.com inurl:developer
+site:target.com inurl:test
+site:target.com inurl:testing
+site:target.com inurl:stage
+site:target.com inurl:staging
+site:target.com inurl:beta
+site:target.com inurl:alpha
+site:target.com inurl:demo
+site:target.com inurl:sandbox
+site:target.com inurl:lab
+site:target.com inurl:labs
+site:target.com inurl:internal
+site:target.com inurl:private
+site:target.com inurl:temp
+site:target.com inurl:temporary
+
+# Subdomains
+dev.target.com
+test.target.com
+staging.target.com
+beta.target.com
+alpha.target.com
+demo.target.com
+sandbox.target.com
+lab.target.com
+internal.target.com
+admin.target.com
+api.target.com
+mail.target.com
+ftp.target.com
+vpn.target.com
+
+# ========================================
+# 🔍 DIRECTORY LISTING & INDEX DORKS
+# ========================================
+
+site:target.com "index of"
+site:target.com "directory listing"
+site:target.com "parent directory"
+site:target.com "folder listing"
+site:target.com intitle:"index of"
+site:target.com intitle:"directory listing"
+site:target.com "index of /" "last modified"
+site:target.com "index of /" "size"
+site:target.com "index of /admin"
+site:target.com "index of /backup"
+site:target.com "index of /backups"
+site:target.com "index of /config"
+site:target.com "index of /database"
+site:target.com "index of /db"
+site:target.com "index of /logs"
+site:target.com "index of /private"
+site:target.com "index of /uploads"
+site:target.com "index of /files"
+
+# ========================================
+# 🚨 ERROR MESSAGES & DEBUG INFO
+# ========================================
+
+# Database Errors
+site:target.com "mysql error"
+site:target.com "sql syntax"
+site:target.com "database error"
+site:target.com "postgresql error"
+site:target.com "oracle error"
+site:target.com "microsoft ole db"
+site:target.com "odbc drivers error"
+site:target.com "sqlite error"
+site:target.com "access denied for user"
+site:target.com "mysql_connect"
+site:target.com "mysql_query"
+site:target.com "mysql_num_rows"
+
+# PHP Errors
+site:target.com "warning: mysql_"
+site:target.com "warning: include"
+site:target.com "warning: require"
+site:target.com "fatal error"
+site:target.com "parse error"
+site:target.com "warning: cannot modify"
+site:target.com "warning: division by zero"
+site:target.com "warning: pg_connect"
+site:target.com "warning: pg_query"
+site:target.com "warning: session_start"
+
+# ASP/ASP.NET Errors
+site:target.com "microsoft ole db provider for odbc drivers"
+site:target.com "microsoft ole db provider for sql server"
+site:target.com "unclosed quotation mark"
+site:target.com "incorrect syntax near"
+site:target.com "server error in"
+site:target.com "runtime error"
+site:target.com "asp.net error"
+
+# Server Information
+site:target.com "phpinfo()"
+site:target.com "server-status"
+site:target.com "server-info"
+site:target.com "test page for apache"
+site:target.com "apache tomcat"
+site:target.com "jboss"
+site:target.com "weblogic"
+site:target.com "websphere"
+
+# ========================================
+# 🔗 API & ENDPOINTS DISCOVERY
+# ========================================
+
+# API Endpoints
+site:target.com inurl:api
+site:target.com inurl:api/v1
+site:target.com inurl:api/v2
+site:target.com inurl:api/v3
+site:target.com inurl:rest
+site:target.com inurl:restful
+site:target.com inurl:graphql
+site:target.com inurl:soap
+site:target.com inurl:wsdl
+site:target.com inurl:json
+site:target.com inurl:xml
+site:target.com inurl:rpc
+site:target.com inurl:service
+site:target.com inurl:services
+site:target.com inurl:endpoint
+site:target.com inurl:endpoints
+
+# API Documentation
+site:target.com "swagger"
+site:target.com "api documentation"
+site:target.com "api docs"
+site:target.com "postman"
+site:target.com "insomnia"
+site:target.com "openapi"
+site:target.com "raml"
+site:target.com "api reference"
+site:target.com "developer documentation"
+site:target.com "api guide"
+
+# ========================================
+# 🔑 CREDENTIALS & SENSITIVE DATA
+# ========================================
+
+# Password Related
+site:target.com "password"
+site:target.com "passwd"
+site:target.com "pwd"
+site:target.com "username"
+site:target.com "user"
+site:target.com "login"
+site:target.com "pass"
+site:target.com "credential"
+site:target.com "credentials"
+site:target.com "auth"
+site:target.com "authentication"
+site:target.com "secret"
+site:target.com "key"
+site:target.com "token"
+site:target.com "session"
+
+# Database Credentials
+site:target.com "db_password"
+site:target.com "database_password"
+site:target.com "mysql_password"
+site:target.com "postgres_password"
+site:target.com "db_user"
+site:target.com "database_user"
+site:target.com "connection_string"
+site:target.com "connectionstring"
+
+# Email & SMTP
+site:target.com "smtp_password"
+site:target.com "email_password"
+site:target.com "mail_password"
+site:target.com "smtp_user"
+site:target.com "email_user"
+site:target.com "mail_user"
+
+# FTP Credentials
+site:target.com "ftp_password"
+site:target.com "ftp_user"
+site:target.com "ftpuser"
+site:target.com "ftppass"
+
+# ========================================
+# 🏗️ FRAMEWORK & CMS SPECIFIC
+# ========================================
+
+# WordPress
+site:target.com inurl:wp-content
+site:target.com inurl:wp-includes
+site:target.com inurl:wp-admin
+site:target.com inurl:wp-login
+site:target.com "wp-config.php"
+site:target.com filetype:sql "wp_users"
+site:target.com filetype:sql "wp_posts"
+
+# Joomla
+site:target.com inurl:administrator
+site:target.com "configuration.php"
+site:target.com "jos_users"
+site:target.com inurl:component
+site:target.com inurl:module
+
+# Drupal
+site:target.com inurl:user/login
+site:target.com "settings.php"
+site:target.com inurl:node
+site:target.com inurl:admin/config
+
+# Laravel
+site:target.com ".env"
+site:target.com "APP_KEY"
+site:target.com "DB_PASSWORD"
+site:target.com inurl:artisan
+
+# Django
+site:target.com "settings.py"
+site:target.com "SECRET_KEY"
+site:target.com "DATABASE_PASSWORD"
+
+# ========================================
+# 🔧 GIT & VERSION CONTROL
+# ========================================
+
+site:target.com inurl:.git
+site:target.com filetype:git
+site:target.com ".git/config"
+site:target.com ".git/HEAD"
+site:target.com ".git/logs/"
+site:target.com ".gitignore"
+site:target.com ".svn"
+site:target.com ".hg"
+site:target.com ".bzr"
+
+# ========================================
+# 📱 MOBILE & APP SPECIFIC
+# ========================================
+
+site:target.com "android"
+site:target.com "ios"
+site:target.com "mobile"
+site:target.com "app"
+site:target.com "application"
+site:target.com "apk"
+site:target.com "ipa"
+site:target.com "plist"
+site:target.com "manifest"
+
+# ========================================
+# 🌩️ CLOUD & INFRASTRUCTURE
+# ========================================
+
+# AWS
+site:target.com "aws"
+site:target.com "amazon"
+site:target.com "s3"
+site:target.com "ec2"
+site:target.com "cloudfront"
+site:target.com "amazonaws"
+site:target.com "aws_access_key"
+site:target.com "aws_secret_key"
+
+# Google Cloud
+site:target.com "gcp"
+site:target.com "google cloud"
+site:target.com "googleapis"
+site:target.com "storage.googleapis.com"
+
+# Azure
+site:target.com "azure"
+site:target.com "microsoft"
+site:target.com "azurewebsites"
+site:target.com "blob.core.windows.net"
+
+# Docker & Containers
+site:target.com "docker"
+site:target.com "dockerfile"
+site:target.com "docker-compose"
+site:target.com "kubernetes"
+site:target.com "k8s"
+
+# ========================================
+# 🔍 ADVANCED SEARCH OPERATORS
+# ========================================
+
+# Combine multiple operators
+site:target.com (inurl:admin OR inurl:login OR inurl:dashboard) (filetype:php OR filetype:asp OR filetype:jsp)
+site:target.com (password OR passwd OR pwd) (filetype:txt OR filetype:log OR filetype:cfg)
+site:target.com ("index of" OR "directory listing") (backup OR config OR database OR private)
+site:target.com (error OR warning OR exception) (mysql OR postgresql OR oracle OR sql)
+
+# Exclude common files
+site:target.com -filetype:pdf -filetype:doc -filetype:jpg -filetype:png
+site:target.com -inurl:images -inurl:css -inurl:js -inurl:fonts
+
+# Time-based searches (use Tools > Any time > Custom range)
+# Search for recently indexed content
+# Search for content from specific time periods
+
+# ========================================
+# 🎯 SOCIAL ENGINEERING VECTORS
+# ========================================
+
+site:target.com "employee"
+site:target.com "staff"
+site:target.com "team"
+site:target.com "contact"
+site:target.com "about us"
+site:target.com "management"
+site:target.com "directory"
+site:target.com "phone"
+site:target.com "email"
+site:target.com "@target.com"
+
+# ========================================
+# 🔒 SECURITY TOOLS & PANELS
+# ========================================
+
+site:target.com "nagios"
+site:target.com "zabbix"
+site:target.com "cacti"
+site:target.com "splunk"
+site:target.com "kibana"
+site:target.com "grafana"
+site:target.com "prometheus"
+site:target.com "jenkins"
+site:target.com "gitlab"
+site:target.com "github"
+site:target.com "bitbucket"
+site:target.com "jira"
+site:target.com "confluence"
+
+# ========================================
+# 📊 BUSINESS INTELLIGENCE
+# ========================================
+
+site:target.com "tableau"
+site:target.com "power bi"
+site:target.com "qlik"
+site:target.com "looker"
+site:target.com "metabase"
+site:target.com "superset"
+site:target.com "dashboard"
+site:target.com "analytics"
+site:target.com "reports"
+site:target.com "metrics"
+
+# ========================================
+# 🎮 GAMING & ENTERTAINMENT
+# ========================================
+
+site:target.com "game"
+site:target.com "gaming"
+site:target.com "player"
+site:target.com "score"
+site:target.com "leaderboard"
+site:target.com "tournament"
+
+# ========================================
+# 💰 E-COMMERCE & PAYMENT
+# ========================================
+
+site:target.com "payment"
+site:target.com "checkout"
+site:target.com "cart"
+site:target.com "order"
+site:target.com "invoice"
+site:target.com "billing"
+site:target.com "paypal"
+site:target.com "stripe"
+site:target.com "credit card"
+site:target.com "transaction"
+
+# ========================================
+# 🏥 HEALTHCARE & COMPLIANCE
+# ========================================
+
+site:target.com "patient"
+site:target.com "medical"
+site:target.com "health"
+site:target.com "hipaa"
+site:target.com "phi"
+site:target.com "gdpr"
+site:target.com "compliance"
+site:target.com "audit"
+
+# ========================================
+# 🎓 EDUCATION & RESEARCH
+# ========================================
+
+site:target.com "student"
+site:target.com "course"
+site:target.com "grade"
+site:target.com "research"
+site:target.com "paper"
+site:target.com "thesis"
+site:target.com "academic"
+site:target.com "university"
+site:target.com "college"
+
+# ========================================
+# 🏢 CORPORATE & BUSINESS
+# ========================================
+
+site:target.com "confidential"
+site:target.com "internal"
+site:target.com "private"
+site:target.com "restricted"
+site:target.com "proprietary"
+site:target.com "classified"
+site:target.com "sensitive"
+site:target.com "not for distribution"
+site:target.com "internal use only"
+site:target.com "company confidential"
+
+# ========================================
+# 🔧 NETWORK & INFRASTRUCTURE
+# ========================================
+
+site:target.com "router"
+site:target.com "switch"
+site:target.com "firewall"
+site:target.com "vpn"
+site:target.com "proxy"
+site:target.com "load balancer"
+site:target.com "dns"
+site:target.com "dhcp"
+site:target.com "snmp"
+site:target.com "network"
+site:target.com "infrastructure"
+
+# ========================================
+# 📧 EMAIL & COMMUNICATION
+# ========================================
+
+site:target.com "webmail"
+site:target.com "outlook"
+site:target.com "exchange"
+site:target.com "zimbra"
+site:target.com "roundcube"
+site:target.com "squirrelmail"
+site:target.com "horde"
+site:target.com "mail"
+site:target.com "email"
+site:target.com "smtp"
+site:target.com "imap"
+site:target.com "pop3"
+
+# ========================================
+# 🎯 BONUS: CREATIVE COMBINATIONS
+# ========================================
+
+# Multi-level searches
+site:target.com (admin OR administrator) AND (password OR login) AND (filetype:txt OR filetype:log)
+site:target.com ("database error" OR "mysql error") AND (username OR password)
+site:target.com ("index of" AND backup) OR ("index of" AND config) OR ("index of" AND private)
+site:target.com (api AND documentation) OR (api AND swagger) OR (api AND postman)
+
+# Negative searches to filter noise
+site:target.com admin -site:facebook.com -site:twitter.com -site:linkedin.com
+site:target.com login -inurl:css -inurl:js -inurl:images -filetype:pdf
+
+# Wildcard searches
+site:*.target.com
+site:target.* 
+
+# ========================================
+# 🚨 IMPORTANT NOTES
+# ========================================
+
+# 1. Always replace "target.com" with your actual target
+# 2. Use these dorks responsibly and only on authorized targets
+# 3. Some results may be false positives - always verify
+# 4. Combine with other OSINT techniques for better results
+# 5. Use VPN and rotate IP addresses to avoid rate limiting
+# 6. Document all findings properly
+# 7. Follow responsible disclosure practices
+# 8. Respect robots.txt and terms of service
+# 9. Use different search engines for varied results
+# 10. Keep your dork lists updated regularly
+
+# Happy Hunting! 🎯🔥
