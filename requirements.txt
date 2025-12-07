@@ -1,0 +1,17 @@
+# Requirements for CVE-2025-55182 Shodan Scanner
+# Install with: pip install -r requirements.txt
+
+# Shodan API client for searching vulnerable targets
+shodan>=1.31.0
+
+# HTTP requests library for vulnerability scanning
+requests>=2.31.0
+
+# Progress bars for better UX
+tqdm>=4.66.0
+
+# Cross-platform colored terminal output
+colorama>=0.4.6
+
+# SSL/TLS warnings control (included with requests, but explicit version)
+urllib3>=2.0.0
